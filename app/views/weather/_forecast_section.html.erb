@@ -1,0 +1,18 @@
+<% if @weather_data["daily_forecast"] %>
+  <div class="forecast-section">
+    <h3>5-Day Forecast</h3>
+    <div class="forecast-grid">
+      <% @weather_data["daily_forecast"].each do |day| %>
+        <div class="forecast-day">
+          <div class="day-name"><%= day["date"] %></div>
+          <img src="http://openweathermap.org/img/w/<%= day["icon"] %>.png" alt="Weather icon">
+          <div class="day-temps">
+            <span class="high forecast-temp" data-temp-f="<%= day["high"] %>"><%= day["high"] %>°</span>
+            <span class="low forecast-temp" data-temp-f="<%= day["low"] %>"><%= day["low"] %>°</span>
+          </div>
+          <div class="day-description"><%= day["description"] %></div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+<% end %>

@@ -1,0 +1,30 @@
+<div class="current-weather">
+  <div class="weather-main">
+    <div class="temperature">
+      <span class="temp-current" data-temp-f="<%= @weather_data["current_temp"] %>"><%= @weather_data["current_temp"] %>°F</span>
+      <div class="temp-range">
+        <span class="temp-high" data-temp-f="<%= @weather_data["today_high"] %>">High: <%= @weather_data["today_high"] %>°</span>
+        <span class="temp-low" data-temp-f="<%= @weather_data["today_low"] %>">Low: <%= @weather_data["today_low"] %>°</span>
+      </div>
+    </div>
+    <div class="weather-description">
+      <img src="http://openweathermap.org/img/w/<%= @weather_data["icon"] %>.png" alt="Weather icon">
+      <span><%= @weather_data["description"] %></span>
+    </div>
+  </div>
+  
+  <div class="weather-details">
+    <div class="detail-item">
+      <span class="label">Feels like:</span>
+      <span class="value temp-feels-like" data-temp-f="<%= @weather_data["feels_like"] %>"><%= @weather_data["feels_like"] %>°F</span>
+    </div>
+    <div class="detail-item">
+      <span class="label">Humidity:</span>
+      <span class="value"><%= @weather_data["humidity"] %>%</span>
+    </div>
+    <div class="detail-item">
+      <span class="label">Wind:</span>
+      <span class="value wind-speed" data-speed-mph="<%= @weather_data["wind_speed"] %>"><%= @weather_data["wind_speed"] %> mph</span>
+    </div>
+  </div>
+</div>

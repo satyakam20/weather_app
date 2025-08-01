@@ -1,0 +1,18 @@
+<% if @weather_data["from_cache"] %>
+  <div class="cache-indicator">
+    <span class="cache-badge">📦 Cached Data</span>
+    <span class="cache-time">
+      Retrieved at 
+      <% begin %>
+        <%= Time.parse(@weather_data["cached_at"].to_s).strftime("%I:%M %p %Z") %>
+      <% rescue => e %>
+        (cached)
+      <% end %>
+    </span>
+  </div>
+<% else %>
+  <div class="cache-indicator">
+    <span class="fresh-badge">🔄 Fresh Data</span>
+    <span class="cache-time">Just retrieved</span>
+  </div>
+<% end %>

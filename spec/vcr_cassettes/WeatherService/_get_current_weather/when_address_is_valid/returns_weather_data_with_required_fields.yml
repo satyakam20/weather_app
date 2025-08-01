@@ -1,0 +1,73 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://nominatim.openstreetmap.org/search?addressdetails=1&format=json&limit=1&q=Vancouver,%20BC
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - WeatherApp/1.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Fri, 01 Aug 2025 07:45:14 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '644'
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - timeout=20
+      Vary:
+      - accept-language
+    body:
+      encoding: UTF-8
+      string: '[{"place_id":347077112,"licence":"Data © OpenStreetMap contributors,
+        ODbL 1.0. http://osm.org/copyright","osm_type":"relation","osm_id":1852574,"lat":"49.2608724","lon":"-123.1139520","class":"boundary","type":"administrative","place_rank":16,"importance":0.7340028794430691,"addresstype":"city","name":"Vancouver","display_name":"Vancouver,
+        Metro Vancouver Regional District, British Columbia, Canada","address":{"city":"Vancouver","county":"Metro
+        Vancouver Regional District","state":"British Columbia","ISO3166-2-lvl4":"CA-BC","country":"Canada","country_code":"ca"},"boundingbox":["49.1989306","49.3161714","-123.2249611","-123.0232419"]}]'
+  recorded_at: Fri, 01 Aug 2025 07:45:14 GMT
+- request:
+    method: get
+    uri: https://api.open-meteo.com/v1/forecast?current=temperature_2m,relative_humidity_2m,apparent_temperature,weather_code,wind_speed_10m&daily=weather_code,temperature_2m_max,temperature_2m_min&forecast_days=7&latitude=49.2608724&longitude=-123.113952&precipitation_unit=inch&temperature_unit=fahrenheit&timezone=auto&wind_speed_unit=mph
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 01 Aug 2025 07:45:15 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJsYXRpdHVkZSI6NDkuMjY4MjcyLCJsb25naXR1ZGUiOi0xMjMuMTE2MjQsImdlbmVyYXRpb250aW1lX21zIjowLjI0ODE5Mzc0MDg0NDcyNjU2LCJ1dGNfb2Zmc2V0X3NlY29uZHMiOi0yNTIwMCwidGltZXpvbmUiOiJBbWVyaWNhL1ZhbmNvdXZlciIsInRpbWV6b25lX2FiYnJldmlhdGlvbiI6IkdNVC03IiwiZWxldmF0aW9uIjo0MC4wLCJjdXJyZW50X3VuaXRzIjp7InRpbWUiOiJpc284NjAxIiwiaW50ZXJ2YWwiOiJzZWNvbmRzIiwidGVtcGVyYXR1cmVfMm0iOiLCsEYiLCJyZWxhdGl2ZV9odW1pZGl0eV8ybSI6IiUiLCJhcHBhcmVudF90ZW1wZXJhdHVyZSI6IsKwRiIsIndlYXRoZXJfY29kZSI6IndtbyBjb2RlIiwid2luZF9zcGVlZF8xMG0iOiJtcC9oIn0sImN1cnJlbnQiOnsidGltZSI6IjIwMjUtMDgtMDFUMDA6NDUiLCJpbnRlcnZhbCI6OTAwLCJ0ZW1wZXJhdHVyZV8ybSI6NjQuNCwicmVsYXRpdmVfaHVtaWRpdHlfMm0iOjY2LCJhcHBhcmVudF90ZW1wZXJhdHVyZSI6NjMuMCwid2VhdGhlcl9jb2RlIjowLCJ3aW5kX3NwZWVkXzEwbSI6NS40fSwiZGFpbHlfdW5pdHMiOnsidGltZSI6Imlzbzg2MDEiLCJ3ZWF0aGVyX2NvZGUiOiJ3bW8gY29kZSIsInRlbXBlcmF0dXJlXzJtX21heCI6IsKwRiIsInRlbXBlcmF0dXJlXzJtX21pbiI6IsKwRiJ9LCJkYWlseSI6eyJ0aW1lIjpbIjIwMjUtMDgtMDEiLCIyMDI1LTA4LTAyIiwiMjAyNS0wOC0wMyIsIjIwMjUtMDgtMDQiLCIyMDI1LTA4LTA1IiwiMjAyNS0wOC0wNiIsIjIwMjUtMDgtMDciXSwid2VhdGhlcl9jb2RlIjpbMywzLDMsMyw1MSw1MSwzXSwidGVtcGVyYXR1cmVfMm1fbWF4IjpbNzcuNyw3Ni43LDcwLjcsNjkuOCw2OS4zLDY2LjQsNjcuMF0sInRlbXBlcmF0dXJlXzJtX21pbiI6WzYwLjYsNTkuMSw1Ni43LDU1LjEsNTUuNiw1Ny44LDU1LjRdfX0=
+  recorded_at: Fri, 01 Aug 2025 07:45:15 GMT
+recorded_with: VCR 6.3.1
