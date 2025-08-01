@@ -1,0 +1,13 @@
+<div class="weather-header">
+  <h2>Current Weather for <%= @weather_data["location"] %></h2>
+  <div class="unit-toggle">
+    <label class="toggle-switch">
+      <input type="checkbox" id="unitToggle">
+      <span class="toggle-slider"></span>
+    </label>
+    <span class="toggle-labels">
+      <span class="imperial-label">°F / mph</span>
+      <span class="metric-label">°C / km/h</span>
+    </span>
+  </div>
+</div>
